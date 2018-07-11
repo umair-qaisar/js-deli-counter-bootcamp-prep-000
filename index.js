@@ -1,9 +1,9 @@
 var katzDeliLine = [];
 
-function takeANumber(line, name){
-  line.push(name);
- console.log("Welcome, " + name + ". You are number "+ line.length + " in line.")
- return ("Welcome, " + name + ". You are number "+ line.length + " in line.")
+function takeANumber(line){
+  line.push(line.length+1);
+ console.log("Welcome. You are number "+ line.length + " in line.")
+ return ("Welcome. You are number "+ line.length + " in line.")
   }
   
   function currentLine(line){
@@ -12,10 +12,10 @@ function takeANumber(line, name){
     return ("The line is currently empty.");
   }
   let namePosition = [];
-  for (let lineIndex=0; lineIndex<line.length; lineIndex++){namePosition.push(lineIndex+1+". "+ line[lineIndex]);
+  for (let i=0; i<line.length; i++){namePosition.push(i+1+". "+ line[i]);
+  }
   console.log("The line is currently: " + namePosition.join(', '));
   return("The line is currently: " + namePosition.join(', '));
-  }
 }
   
 function nowServing(line){
@@ -28,11 +28,11 @@ function nowServing(line){
 }
 
 
-takeANumber(katzDeliLine, "Ada"); 
+takeANumber(katzDeliLine); 
 // "Welcome, Ada. You are number 1 in line."
-takeANumber(katzDeliLine, "Grace"); 
+takeANumber(katzDeliLine); 
 // "Welcome, Grace. You are number 2 in line."
-takeANumber(katzDeliLine, "Kent"); 
+takeANumber(katzDeliLine); 
 // "Welcome, Kent. You are number 3 in line."
 currentLine(katzDeliLine); 
 // "The line is currently: 1. Ada, 2. Grace, 3. Kent"
@@ -41,7 +41,7 @@ nowServing(katzDeliLine); // "Currently serving Ada."
  
 currentLine(katzDeliLine); // "The line is currently: 1. Grace, 2. Kent"
  
-takeANumber(katzDeliLine, "Matz"); // "3"
+takeANumber(katzDeliLine); // "3"
  
 currentLine(katzDeliLine); // "The line is currently: 1. Grace, 2. Kent, 3. Matz"
  
